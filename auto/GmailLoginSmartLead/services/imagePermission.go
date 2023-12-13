@@ -9,26 +9,26 @@ import (
 
 func ImagePermissions(page playwright.Page,useraccountidx int) error {
 	fmt.Println("clicking profile button")
-	if err := page.Locator("#gb > div.gb_od.gb_id.gb_ud > div.gb_yd.gb_cb.gb_nd.gb_Ad > div.gb_Sd > div.gb_b.gb_v.gb_Zf.gb_H > div").WaitFor(playwright.LocatorWaitForOptions{}); err != nil {
+	if err := page.Locator("#yDmH0d > c-wiz > div > div:nth-child(2) > div > c-wiz > c-wiz > div > div.s7iwrf.gMPiLc.Kdcijb > div > div > header > div.g3lg0e > div > button > figure > img").WaitFor(playwright.LocatorWaitForOptions{}); err != nil {
 		log.Printf("Error waiting for profile button: %v", err)
 		return err
 	}
 
-	if err := page.Locator("#gb > div.gb_od.gb_id.gb_ud > div.gb_yd.gb_cb.gb_nd.gb_Ad > div.gb_Sd > div.gb_b.gb_v.gb_Zf.gb_H > div").Click(); err != nil {
+	if err := page.Locator("#yDmH0d > c-wiz > div > div:nth-child(2) > div > c-wiz > c-wiz > div > div.s7iwrf.gMPiLc.Kdcijb > div > div > header > div.g3lg0e > div > button > figure > img").Click(); err != nil {
 		log.Printf("Error clicking for profile button: %v", err)
 		return err
 	}
 	fmt.Println("clicked profile button")
 
 	fmt.Println("clicking edit button")
-	frame := page.FrameLocator("#gb > div.gb_od.gb_id.gb_ud > div.gb_yd.gb_cb.gb_nd.gb_Ad > div:nth-child(3) > iframe")
-
-	if err := frame.Locator("#yDmH0d > c-wiz > div.T4LgNb > div > div > div > div.sZ3gbf > div > div:nth-child(2) > c-wiz > div > div.XS2qof.Q3BXBb > img").WaitFor(playwright.LocatorWaitForOptions{}); err != nil {
+	
+	frame := page.FrameLocator("#yDmH0d > iframe:nth-child(23)")
+	if err := frame.Locator("#yDmH0d > c-wiz > main > div > div.DHz5ad > div.cquyXc > div.RtYLze > div > div > button > div.VfPpkd-RLmnJb").WaitFor(playwright.LocatorWaitForOptions{}); err != nil {
 		log.Printf("Error waiting for edit button: %v", err)
 		return err
 	}
 
-	if err := frame.Locator("#yDmH0d > c-wiz > div.T4LgNb > div > div > div > div.sZ3gbf > div > div:nth-child(2) > c-wiz > div > div.XS2qof.Q3BXBb > img").Click(); err != nil {
+	if err := frame.Locator("#yDmH0d > c-wiz > main > div > div.DHz5ad > div.cquyXc > div.RtYLze > div > div > button > div.VfPpkd-RLmnJb").Click(); err != nil {
 		log.Printf("Error clicking for edit button: %v", err)
 		return err
 	}

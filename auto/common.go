@@ -72,12 +72,9 @@ func (c Common) InitiateBrowser(pw *playwright.Playwright) (playwright.Browser, 
 	browser, err := pw.Chromium.Launch(playwright.BrowserTypeLaunchOptions{
 		Headless:          playwright.Bool(false),
 		Channel:           &browserSource,
-		IgnoreDefaultArgs: []string{"--disable-component-extensions-with-background-pages"},
+		IgnoreDefaultArgs: []string{},
 		Args: []string{
-			"--use-fake-device-for-media-stream",
-			"--use-fake-ui-for-media-stream",
 			"--start-maximized",
-			"--disable-site-isolation-trials",
 			"--incognito",
 		},
 	})

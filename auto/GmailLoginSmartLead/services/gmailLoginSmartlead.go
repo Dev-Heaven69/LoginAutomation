@@ -77,11 +77,14 @@ func GmailLoginSmartLead(page playwright.Page, accountidx int) error {
 	var accountSelector string
 	fmt.Println(accountidx)
 
-	// if accountidx == 1 {
-	// 	accountSelector = "#view_container > div > div > div.pwWryf.bxPAYd > div > div.WEQkZc > div > form > span > section > div > div > div > div > ul > li.JDAKTe.ibdqA.W7Aapd.zpCp3.SmR8 > div"
-	// } else {
+	if accountidx == 1 {
+		accountSelector = "#view_container > div > div > div.pwWryf.bxPAYd > div > div.WEQkZc > div > form > span > section > div > div > div > div > ul > li.JDAKTe.ibdqA.W7Aapd.zpCp3.SmR8 > div"
+	} else {
 	accountSelector = fmt.Sprintf("#view_container > div > div > div.pwWryf.bxPAYd > div > div.WEQkZc > div > form > span > section > div > div > div > div > ul > li:nth-child(%d) > div", accountidx)
-	// }
+	}
+
+	fmt.Println(accountSelector,"     ", "214")
+	time.Sleep(3*time.Second)
 	if err := page.Locator(accountSelector).WaitFor(playwright.LocatorWaitForOptions{}); err != nil {
 		log.Printf("Error while waiting for account: %v", err)
 		return err
@@ -91,7 +94,7 @@ func GmailLoginSmartLead(page playwright.Page, accountidx int) error {
 		log.Printf("Error while clicking account: %v", err)
 		return err
 	}
-
+// #view_container > div > div > div.pwWryf.bxPAYd > div > div.WEQkZc > div > form > span > section > div > div > div > div > ul > li.JDAKTe.ibdqA.W7Aapd.zpCp3.SmR8 > div
 	fmt.Println("clicked google panel")
 
 	fmt.Println("clicking confirm button")
