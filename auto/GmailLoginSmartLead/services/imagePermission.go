@@ -19,30 +19,16 @@ func ImagePermissions(page playwright.Page,useraccountidx int) error {
 		return err
 	}
 	fmt.Println("clicked profile button")
-
-	fmt.Println("clicking edit button")
 	
-	frame := page.FrameLocator("#yDmH0d > iframe:nth-child(23)")
-	if err := frame.Locator("#yDmH0d > c-wiz > main > div > div.DHz5ad > div.cquyXc > div.RtYLze > div > div > button > div.VfPpkd-RLmnJb").WaitFor(playwright.LocatorWaitForOptions{}); err != nil {
-		log.Printf("Error waiting for edit button: %v", err)
-		return err
-	}
-
-	if err := frame.Locator("#yDmH0d > c-wiz > main > div > div.DHz5ad > div.cquyXc > div.RtYLze > div > div > button > div.VfPpkd-RLmnJb").Click(); err != nil {
-		log.Printf("Error clicking for edit button: %v", err)
-		return err
-	}
-	fmt.Println("clicked edit button")
-
-	mainFrame := page.FrameLocator("#yDmH0d > iframe:nth-child(25)")
+	mainFrame := page.FrameLocator("#yDmH0d > iframe:nth-child(23)")
 
 	fmt.Println("clicking visible to people button")
-	if err := mainFrame.Locator("#yDmH0d > c-wiz.zGzCU.ftAIlf.wiax5e.WjBoXb.rqSEqc.SSPGKf.TJKThb.gt34yd > main > div > div.DHz5ad > div.cquyXc > div.RtYLze > div > div > button > span.VfPpkd-kBDsod > svg").First().WaitFor(playwright.LocatorWaitForOptions{}); err != nil {
+	if err := mainFrame.Locator("#yDmH0d > c-wiz > main > div > div.DHz5ad > div.cquyXc > div.RtYLze > div > div > button > div.VfPpkd-RLmnJb").WaitFor(playwright.LocatorWaitForOptions{}); err != nil {
 		log.Printf("Error waiting for visible to people button: %v", err)
 		return err
 	}
 
-	if err := mainFrame.Locator("#yDmH0d > c-wiz.zGzCU.ftAIlf.wiax5e.WjBoXb.rqSEqc.SSPGKf.TJKThb.gt34yd > main > div > div.DHz5ad > div.cquyXc > div.RtYLze > div > div > button > span.VfPpkd-kBDsod > svg").First().Click(); err != nil {
+	if err := mainFrame.Locator("#yDmH0d > c-wiz > main > div > div.DHz5ad > div.cquyXc > div.RtYLze > div > div > button > div.VfPpkd-RLmnJb").Click(); err != nil {
 		log.Printf("Error clicking for visible to people button: %v", err)
 		return err
 	}
